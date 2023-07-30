@@ -43,8 +43,11 @@ const Product = ({ product }) => {
               <Descriptions.Item label="Category">
                 {product?.category}
               </Descriptions.Item>
-              <Descriptions.Item label="Rating">
+              <Descriptions.Item label="Average Rating">
                 {product?.averageRating}
+              </Descriptions.Item>
+              <Descriptions.Item label="Individual Rating">
+                {product?.individualRating}
               </Descriptions.Item>
               <Descriptions.Item label="Price">
                 {product?.price}
