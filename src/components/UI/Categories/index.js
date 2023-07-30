@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Avatar } from "antd";
 import Link from "next/link";
+import Image from "next/image";
 const { Meta } = Card;
 
 const Categories = ({ categories }) => {
@@ -23,8 +24,16 @@ const Categories = ({ categories }) => {
                 hoverable
                 style={{
                   width: 200,
+                  //   height: 200,
                 }}
-                cover={<img alt="example" src={category.img} />}
+                cover={
+                  <Image
+                    alt="category img"
+                    src={"/" + category.img}
+                    width={100}
+                    height={150}
+                  />
+                }
               >
                 <Meta style={{ textAlign: "center" }} title={category.name} />
               </Card>

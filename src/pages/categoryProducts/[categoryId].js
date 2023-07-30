@@ -13,9 +13,13 @@ CategoryProducts.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(
-    `https://pc-builder-backend-jade.vercel.app/categories`
-  );
+  //   if (typeof window === "undefined") {
+  //     return {
+  //       paths: [],
+  //       fallback: false,
+  //     };
+  //   }
+  const res = await fetch(`${process.env.BASE_URL}/categories`);
   const categories = await res.json();
 
   const paths = categories.map((category) => ({
@@ -30,9 +34,16 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
+  //   if (typeof window === "undefined") {
+  //     return {
+  //       props: {
+  //         products: [],
+  //       },
+  //     };
+  //   }
 
   const res = await fetch(
-    `https://pc-builder-backend-jade.vercel.app/products?categoryId=${params.categoryId}`
+    `${process.env.BASE_URL}/products?categoryId=${params.categoryId}`
   );
   const products = await res.json();
 

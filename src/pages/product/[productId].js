@@ -114,9 +114,7 @@ const Product = ({ product }) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(
-    `https://pc-builder-backend-jade.vercel.app/products`
-  );
+  const res = await fetch(`${process.env.BASE_URL}/products`);
   const products = await res.json();
 
   const paths = products.map((product) => ({
@@ -131,9 +129,16 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { params } = context;
+  //   if (typeof window === "undefined") {
+  //     return {
+  //       props: {
+  //         product: {},
+  //       },
+  //     };
+  //   }
 
   const res = await fetch(
-    `https://pc-builder-backend-jade.vercel.app/product/${params.productId}`
+    `${process.env.BASE_URL}/product/${params.productId}`
   );
   const product = await res.json();
 

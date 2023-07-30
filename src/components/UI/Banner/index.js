@@ -17,18 +17,7 @@ export default function Banner() {
           <img src="/banner1.jpg" width={"100%"} height="600" />
         </div>
         <div>
-          <img
-            src="https://waltonbd.com/image/catalog/Computer/Desktop/desktop-2.jpg"
-            width={"100%"}
-            height="600"
-          />
-        </div>
-        <div>
-          <img
-            src="https://waltonbd.com/image/catalog/Computer/Desktop/Desktop-Group.jpg"
-            width={"100%"}
-            height="600"
-          />
+          <img src="/banner2.jpg" width={"100%"} height="600" />
         </div>
       </Carousel>
     </>

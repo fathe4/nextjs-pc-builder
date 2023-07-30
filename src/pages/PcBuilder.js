@@ -73,7 +73,7 @@ const PCForm = () => {
         type="primary"
         className="my-4"
         onClick={() => notify()}
-        // disabled={totalAddedComponents.length < 5}
+        disabled={totalAddedComponents.length < 5}
       >
         Complete Build
       </Button>

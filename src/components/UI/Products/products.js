@@ -53,7 +53,7 @@ const Products = ({ products, isAddToBuilderBtnVisible }) => {
                   <Text type="secondary" strong>
                     Price:
                   </Text>
-                  <Text type="secondary">{product.price}</Text>
+                  <Text type="secondary">{product.price}$</Text>
                 </Row>
                 <Row>
                   <Text type="secondary" strong>
@@ -65,7 +65,7 @@ const Products = ({ products, isAddToBuilderBtnVisible }) => {
                   <Text type="secondary" strong>
                     Rating:
                   </Text>
-                  <Text type="secondary">{product.rating} Star</Text>
+                  <Text type="secondary">{product.averageRating} Star</Text>
                 </Row>
               </Link>
               {isAddToBuilderBtnVisible && (

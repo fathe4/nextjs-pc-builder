@@ -36,13 +36,17 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const categoryRes = await fetch(
-    "https://pc-builder-backend-jade.vercel.app/categories"
-  );
+  //   if (typeof window === "undefined") {
+  //     return {
+  //       props: {
+  //         categories: [],
+  //         products: [],
+  //       },
+  //     };
+  //   }
+  const categoryRes = await fetch(`${process.env.BASE_URL}/categories`);
   const categoryData = await categoryRes.json();
-  const productRes = await fetch(
-    "https://pc-builder-backend-jade.vercel.app/products"
-  );
+  const productRes = await fetch(`${process.env.BASE_URL}/products`);
   const productData = await productRes.json();
   return {
     props: {
